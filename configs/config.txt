@@ -1,0 +1,8 @@
+root=/dev/ram rw rootwait
+ignore_loglevel
+init=/sbin/init
+oops=panic
+panic=-1
+loadpin.enforce=0
+console=tty1 console=ttyMSM0,115200n8
+earlycon
