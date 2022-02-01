@@ -15,8 +15,8 @@ Build and boot chromium and upstream kernel on SC7280
 #### Opensource References for above binary files:
 
 * mkbootimg: https://android.googlesource.com/platform/system/tools/mkbootimg/
-* mkimage: https://github.com/u-boot/u-boot/blob/master/tools/mkimage.c
-* vbutil_kernel: Built from https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/futility/cmd_vbutil_kernel.c
+* mkimage: `sudo apt-get install u-boot-tools` or https://github.com/u-boot/u-boot/blob/master/tools/mkimage.c
+* vbutil_kernel: `sudo apt-get install vboot-kernel-utils` or Built from https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/futility/cmd_vbutil_kernel.c
 * kernel_data_key.vbprivk: https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/tests/devkeys/kernel_data_key.vbprivk
 * kernel.keyblock: https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/tests/devkeys/kernel.keyblock
 * bootloader.bin: `dd if=/dev/zero bs=512 count=1 of="bootloader.bin" `
