@@ -24,13 +24,13 @@ Build and boot chromium and upstream kernel on SC7280
 ### Build and flash chrome kernel with initrd:
 
 1. Change the kernel source path in `sc7280-build-chrome.sh`
-2. Run the sc7180 build script as `sh sc7280-build-chrome.sh`
+2. Run the sc7280 build script as `sh sc7280-build-chrome.sh`
 3. A kernel image `new-sc7280_kern.bin` will be created in configs/ folder
 
 ### Build and flash upstream kernel with initrd:
 
 1. Change the kernel source path in `sc7280-build-upstream.sh`
-2. Run the sc7180 build script as `sh sc7280-build-upstream.sh`
+2. Run the sc7280 build script as `sh sc7280-build-upstream.sh`
 3. A kernel image `new-sc7280_kern.bin` will be created in configs/ folder
 
 ### Unpack ramdisk:
