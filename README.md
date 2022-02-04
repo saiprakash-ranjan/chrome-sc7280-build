@@ -33,6 +33,33 @@ Build and boot chromium and upstream kernel on SC7280
 2. Run the sc7280 build script as `sh sc7280-build-upstream.sh`
 3. A kernel image `new-sc7280_kern.bin` will be created in configs/ folder
 
+### Build initramfs:
+
+Reference: https://lyngvaer.no/log/create-linux-initramfs
+
+* mkdir -p root; cd root
+* mkdir -p bin dev etc lib mnt proc sbin sys tmp var; cd -
+* curl -L https://www.busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-armv8l > root/bin/busybox
+* chmod +x root/bin/busybox
+* Init content below,
+```
+cat >> root/init << EOF
+#!/bin/busybox sh
+
+/bin/busybox --install -s
+
+mount -t devtmpfs  devtmpfs  /dev
+mount -t proc      proc      /proc
+mount -t sysfs     sysfs     /sys
+mount -t tmpfs     tmpfs     /tmp
+
+sh
+
+EOF
+```
+* chmod +x root/init; cd root
+* find . | cpio -o -H newc > ../initrd-arm64-sc7280
+
 ### Unpack ramdisk:
 
 * mkdir tmp
